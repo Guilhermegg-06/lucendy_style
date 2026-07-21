@@ -54,7 +54,6 @@
   height: auto;
   object-fit: contain;
   filter: invert(1) drop-shadow(0 10px 24px rgba(255, 255, 255, 0.055));
-  mix-blend-mode: screen;
   animation: hero-logo-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 

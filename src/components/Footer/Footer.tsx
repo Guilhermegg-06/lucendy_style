@@ -1,6 +1,6 @@
 import { business } from "../../data/business";
 
-const logos = import.meta.glob<string>("../../assets/*.{png,jpg,jpeg,JPG,JPEG}", {
+const logos = import.meta.glob<string>("../../assets/lucendy-logo.png", {
   eager: true,
   import: "default",
   query: "?url",
@@ -10,7 +10,7 @@ export default function Footer() {
   const logo = Object.values(logos)[0];
   return (
     <footer className="footer content-shell">
-      {logo && <img src={logo} alt="" style={{ filter: "invert(1)", mixBlendMode: "screen" }} />}
+      {logo && <img src={logo} alt="" style={{ filter: "invert(1)" }} />}
       <div><strong>{business.name}</strong><p>{business.phoneDisplay} · {business.instagramUsername}<br />{business.address.city} — {business.address.state}</p></div>
       <small>© {new Date().getFullYear()} {business.name}. Desenvolvido por Guilherme.</small>
     </footer>

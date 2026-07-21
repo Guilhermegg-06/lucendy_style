@@ -1,6 +1,6 @@
 import "./HeroHeader.css";
 
-const logoModules = import.meta.glob<string>("../../assets/*.{png,jpg,jpeg,JPG,JPEG}", {
+const logoModules = import.meta.glob<string>("../../assets/lucendy-logo.png", {
   eager: true,
   import: "default",
   query: "?url",
