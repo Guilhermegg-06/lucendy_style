@@ -9,6 +9,6 @@ export const navigationCards = [
   { title: "Valores", text: "Veja as opções", href: "#servicos", image: "/images/posts/barboterapia-atendimento.jpg", icon: "R$" },
   { title: "Últimos trabalhos", text: "Resultados reais", href: "#trabalhos", image: "/images/posts/corte-degrade-mullet.jpg", icon: "▦" },
   { title: "Instagram", text: "@lucendy_style", href: "https://www.instagram.com/lucendy_style?igsh=MTRza3lsNmNwam53MA%3D%3D&utm_source=qr", image: "/images/posts/simbolo-lucendy.jpg", icon: "IG" },
-  { title: "Como chegar", text: "Maribondo — AL", href: "#localizacao", image: "/images/cards/localizacao.jpg", icon: "⌖" },
+  { title: "Como chegar", text: "Maribondo — AL", href: "#localizacao", image: "/images/cards/google-maps.webp", icon: "⌖" },
   { title: "Avaliações", text: "Conheça a experiência", href: "#localizacao", image: "/images/posts/corte-tesoura-textura.jpg", icon: "★" },
 ];
