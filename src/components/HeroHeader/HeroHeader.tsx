@@ -1,5 +1,12 @@
-import voucherLogo from "../../assets/voucher-logo.png";
 import "./HeroHeader.css";
+
+const logoModules = import.meta.glob<string>("../../assets/voucher-logo.png", {
+  eager: true,
+  import: "default",
+  query: "?url",
+});
+
+const voucherLogo = logoModules["../../assets/voucher-logo.png"];
 
 function HeroHeader() {
   return (
@@ -7,11 +14,19 @@ function HeroHeader() {
       <div className="hero-header__glow" aria-hidden="true" />
 
       <div className="hero-header__content">
-        <img
-          className="hero-header__logo"
-          src={voucherLogo}
-          alt="Voucher Barbearia"
-        />
+        {voucherLogo ? (
+          <img
+            className="hero-header__logo"
+            src={voucherLogo}
+            alt="Voucher Barbearia"
+          />
+        ) : (
+          <div
+            className="hero-header__logo hero-header__logo--missing"
+            role="img"
+            aria-label="Logo da Voucher Barbearia ainda não adicionada"
+          />
+        )}
 
         <p className="hero-header__slogan" id="hero-slogan">
           Seu próximo visual começa aqui.

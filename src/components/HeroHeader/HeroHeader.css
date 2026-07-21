@@ -57,6 +57,10 @@
   animation: hero-logo-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.hero-header__logo--missing {
+  aspect-ratio: 2 / 1;
+}
+
 .hero-header__slogan {
   margin: clamp(1.75rem, 5.5vh, 3rem) 0 0;
   color: rgba(255, 255, 255, 0.82);
