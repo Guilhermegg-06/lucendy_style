@@ -1,12 +1,12 @@
 import "./HeroHeader.css";
 
-const logoModules = import.meta.glob<string>("../../assets/voucher-logo.png", {
+const logoModules = import.meta.glob<string>("../../assets/*.png", {
   eager: true,
   import: "default",
   query: "?url",
 });
 
-const voucherLogo = logoModules["../../assets/voucher-logo.png"];
+const voucherLogo = Object.values(logoModules)[0];
 
 function HeroHeader() {
   return (

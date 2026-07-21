@@ -13,6 +13,7 @@
 
 html {
   background: #080808;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,6 +21,11 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+
+body.modal-open { overflow: hidden; }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
 img {
   display: block;

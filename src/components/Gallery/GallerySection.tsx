@@ -1,0 +1,10 @@
+import { useEffect, useRef, useState } from "react";
+import { business } from "../../data/business";
+import { BarberPost, posts } from "../../data/posts";
+import { createWhatsAppUrl } from "../../utils/whatsapp";
+import SmartImage from "../SmartImage/SmartImage";
+export default function GallerySection() {
+  const [active, setActive] = useState<BarberPost | null>(null); const closeRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => { if (!active) return; document.body.classList.add("modal-open"); closeRef.current?.focus(); const key = (e: KeyboardEvent) => e.key === "Escape" && setActive(null); addEventListener("keydown", key); return () => { document.body.classList.remove("modal-open"); removeEventListener("keydown", key); }; }, [active]);
+  return <section className="section content-shell" id="trabalhos" aria-labelledby="gallery-title"><header className="section-heading"><p className="eyebrow">NOSSA ASSINATURA</p><h2 id="gallery-title">Últimos trabalhos</h2><p>Alguns resultados que passaram pelas nossas cadeiras.</p></header><div className="gallery-grid">{posts.map((post) => <button className={post.featured ? "gallery-card gallery-card--featured" : "gallery-card"} key={post.id} onClick={() => setActive(post)}><SmartImage src={post.image} alt={post.caption} label={post.service ?? "Trabalho"} /><span><b>{post.service}</b><small>Ver trabalho</small></span></button>)}</div>{active && <div className="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onMouseDown={(e) => e.target === e.currentTarget && setActive(null)}><div className="modal__panel"><button ref={closeRef} className="modal__close" onClick={() => setActive(null)} aria-label="Fechar foto">×</button><SmartImage src={active.image} alt={active.caption} label={active.service ?? "Trabalho"} /><div className="modal__text"><p className="eyebrow">{active.service}</p><h2 id="modal-title">{active.caption}</h2><a className="primary-button" href={createWhatsAppUrl(business.phoneNumber, `Olá! Quero um corte assim: ${active.service ?? active.caption}.`)} target="_blank" rel="noopener noreferrer">Quero um corte assim</a></div></div></div>}</section>;
+}
