@@ -1,2 +1,2 @@
-import { business } from "../../data/business"; import { createWhatsAppUrl } from "../../utils/whatsapp";
-export default function FinalCTA() { return <section className="final-cta content-shell"><p className="eyebrow">A CADEIRA ESTÁ PRONTA</p><h2>{business.slogan}</h2><p>Escolha o serviço e fale com a gente pelo WhatsApp.</p><a className="primary-button" href={createWhatsAppUrl(business.phoneNumber, business.bookingMessage)} target="_blank" rel="noopener noreferrer">Agendar agora →</a></section>; }
+import { business } from "../../data/business";
+export default function FinalCTA() { return <section className="final-cta content-shell"><p className="eyebrow">A CADEIRA ESTÁ PRONTA</p><h2>{business.slogan}</h2><p>Escolha o serviço e reserve seu horário online.</p><a className="primary-button" href={business.bookingUrl} target="_blank" rel="noopener noreferrer">Agendar agora →</a></section>; }

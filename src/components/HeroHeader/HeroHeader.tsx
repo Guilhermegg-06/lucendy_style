@@ -6,7 +6,7 @@ const logoModules = import.meta.glob<string>("../../assets/*.{png,jpg,jpeg,JPG,J
   query: "?url",
 });
 
-const voucherLogo = Object.values(logoModules)[0];
+const brandLogo = Object.values(logoModules)[0];
 
 function HeroHeader() {
   return (
@@ -14,17 +14,17 @@ function HeroHeader() {
       <div className="hero-header__glow" aria-hidden="true" />
 
       <div className="hero-header__content">
-        {voucherLogo ? (
+        {brandLogo ? (
           <img
             className="hero-header__logo"
-            src={voucherLogo}
-            alt="Voucher Barbearia"
+            src={brandLogo}
+            alt="Lucendy Style"
           />
         ) : (
           <div
             className="hero-header__logo hero-header__logo--missing"
             role="img"
-            aria-label="Logo da Voucher Barbearia ainda não adicionada"
+            aria-label="Logo da Lucendy Style ainda não adicionada"
           />
         )}
 
