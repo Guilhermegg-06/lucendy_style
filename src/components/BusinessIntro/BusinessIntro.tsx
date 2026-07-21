@@ -18,7 +18,7 @@ export default function BusinessIntro() {
       <a className="primary-button" href={business.bookingUrl} target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◌</span> Agendar horário</a>
 
       <section className="social-section" aria-labelledby="social-title">
-        <div className="social-heading"><span aria-hidden="true">✦</span><div><p className="eyebrow">FIQUE POR DENTRO</p><h2 id="social-title">Acompanhe nossos trabalhos nas redes</h2></div></div>
+        <div className="social-heading"><span aria-hidden="true"><SocialIcon name="like" /></span><div><p className="eyebrow">FIQUE POR DENTRO</p><h2 id="social-title">Acompanhe nossos trabalhos nas redes</h2></div></div>
         <nav className="social-links" aria-label="Redes e canais da Lucendy Style">
           {socialLinks.map((link) => <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.label} title={link.label}><SocialIcon name={link.icon} /><small>{link.label}</small></a>)}
         </nav>
