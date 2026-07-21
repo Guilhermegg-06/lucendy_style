@@ -1,7 +1,18 @@
-export interface BarberPost { id: string; image: string; caption: string; date: string; barber?: string; service?: string; featured?: boolean }
+export interface BarberPost {
+  id: string;
+  image: string;
+  caption: string;
+  date: string;
+  barber?: string;
+  service?: string;
+  featured?: boolean;
+}
+
 export const posts: BarberPost[] = [
-  { id: "1", image: "/images/posts/corte-01.jpg", caption: "Degradê limpo com acabamento natural.", date: "2026-07-18", service: "Degradê", featured: true },
-  { id: "2", image: "/images/posts/corte-02.jpg", caption: "Textura e definição.", date: "2026-07-15", service: "Corte masculino" },
-  { id: "3", image: "/images/posts/corte-03.jpg", caption: "Barba desenhada nos detalhes.", date: "2026-07-12", service: "Barba" },
-  { id: "4", image: "/images/posts/corte-04.jpg", caption: "Visual completo e alinhado.", date: "2026-07-09", service: "Corte + barba" },
+  { id: "corte-barba", image: "/images/posts/corte-barba.jpg", caption: "Degradê baixo com barba desenhada e acabamento preciso.", date: "2026-07-21", service: "Corte + barba", featured: true },
+  { id: "barboterapia-atendimento", image: "/images/posts/barboterapia-atendimento.jpg", caption: "Cuidado da barba durante o atendimento.", date: "2026-07-21", service: "Barboterapia" },
+  { id: "corte-tesoura", image: "/images/posts/corte-tesoura-textura.jpg", caption: "Volume preservado, textura e laterais alinhadas.", date: "2026-07-21", service: "Corte na tesoura" },
+  { id: "degrade-mullet", image: "/images/posts/corte-degrade-mullet.jpg", caption: "Degradê com comprimento e personalidade na parte posterior.", date: "2026-07-21", service: "Corte degradê" },
+  { id: "barboterapia-relaxamento", image: "/images/posts/barboterapia-relaxamento.jpg", caption: "Um momento de cuidado e relaxamento durante o serviço de barba.", date: "2026-07-21", service: "Barboterapia" },
+  { id: "evento-profissional", image: "/images/posts/evento-profissional.jpg", caption: "Em busca de novas técnicas e evolução profissional.", date: "2026-07-21", service: "Aperfeiçoamento profissional" },
 ];
