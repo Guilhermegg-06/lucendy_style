@@ -1,9 +1,9 @@
 import { business } from "./business";
 
 export const socialLinks = [
-  { label: "Agendamento", short: "AG", url: business.bookingUrl },
-  { label: "TikTok", short: "TT", url: business.tiktokUrl },
-  { label: "Instagram", short: "IG", url: business.instagramUrl },
-  { label: "WhatsApp", short: "WA", url: `https://wa.me/${business.phoneNumber}` },
-  { label: "Localização", short: "MAP", url: business.mapsUrl },
+  { label: "Agendamento", icon: "calendar" as const, url: business.bookingUrl },
+  { label: "TikTok", icon: "tiktok" as const, url: business.tiktokUrl },
+  { label: "Instagram", icon: "instagram" as const, url: business.instagramUrl },
+  { label: "WhatsApp", icon: "whatsapp" as const, url: `https://wa.me/${business.phoneNumber}` },
+  { label: "Localização", icon: "map" as const, url: business.mapsUrl },
 ];
