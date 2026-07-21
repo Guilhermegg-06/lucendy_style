@@ -1,3 +1,4 @@
+import { business } from "../../data/business";
 import "./HeroHeader.css";
 
 const logoModules = import.meta.glob<string>("../../assets/lucendy-logo.png", {
@@ -29,7 +30,7 @@ function HeroHeader() {
         )}
 
         <p className="hero-header__slogan" id="hero-slogan">
-          Seu próximo visual começa aqui.
+          {business.slogan}
         </p>
 
         <div className="hero-header__explore" aria-hidden="true">

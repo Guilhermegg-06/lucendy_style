@@ -1,6 +1,6 @@
 export const business = {
   name: "Lucendy Style",
-  slogan: "Seu próximo visual começa aqui.",
+  slogan: "A marca das estrelas.",
   description: "Estilo, cuidado e atendimento em cada detalhe.",
   phoneDisplay: "(82) 9 9682-2853",
   phoneNumber: "5582996822853",
