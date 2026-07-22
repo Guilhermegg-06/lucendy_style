@@ -1,5 +1,6 @@
 import { business } from "../../data/business";
 import { services } from "../../data/services";
+import { BookingTrigger } from "../Booking/BookingProvider";
 
 export default function ServicesSection() {
   return (
@@ -11,7 +12,7 @@ export default function ServicesSection() {
           <div><h3>{service.name}</h3><p>{service.description}</p></div>
           <div className="service-action">
             <strong>{service.startingAt && <small>A partir de </small>}{service.price.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 2 })}</strong>
-            <a href={business.bookingUrl} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.name}`}>Agendar</a>
+            <BookingTrigger message={`Olá! Gostaria de agendar o serviço ${service.name} na Lucendy Style.`} ariaLabel={`Agendar ${service.name}`}>Agendar</BookingTrigger>
           </div>
         </article>
       ))}</div>
