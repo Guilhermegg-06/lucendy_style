@@ -24,6 +24,8 @@ export const servicePackages: ServicePackage[] = [
 ];
 
 export const services: Service[] = [
+  { id: "corte", name: "Corte", description: "Corte de cabelo com acabamento.", price: 35, icon: "✦" },
+  { id: "barba", name: "Barba", description: "Aparo, desenho e acabamento da barba.", price: 25, icon: "◒" },
   { id: "desondulacao-1", name: "Desondulação 1.0", description: "Tratamento para redução e controle do volume.", price: 70, startingAt: true, icon: "≈" },
   { id: "desondulacao-2", name: "Desondulação 2.0", description: "Tratamento intensivo para alinhamento dos fios.", price: 90, startingAt: true, icon: "≈" },
   { id: "hidratacao-profunda", name: "Hidratação profunda", description: "Hidratação intensiva dos fios.", price: 30, startingAt: true, icon: "◇" },
@@ -39,6 +41,4 @@ export const services: Service[] = [
   { id: "epilacao-nariz", name: "Epilação do nariz — cera", description: "Remoção cuidadosa dos pelos com cera.", price: 15, icon: "○" },
   { id: "acabamento-pezinho", name: "Acabamento do pezinho", description: "Contorno e acabamento preciso.", price: 15, icon: "⌁" },
   { id: "barboterapia", name: "Barboterapia", description: "Tratamento, desenho e cuidado completo da barba.", price: 30, icon: "◒" },
-  { id: "barba", name: "Barba", description: "Aparo, desenho e acabamento da barba.", price: 25, icon: "◒" },
-  { id: "corte", name: "Corte", description: "Corte de cabelo com acabamento.", price: 35, icon: "✦" },
 ];
