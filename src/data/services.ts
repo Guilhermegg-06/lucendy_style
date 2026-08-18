@@ -7,12 +7,23 @@ export interface Service {
   icon: string;
 }
 
+export interface ServicePackage {
+  id: string;
+  name: string;
+  items: string[];
+  discount?: number;
+  discountNote?: string;
+}
+
+export const servicePackages: ServicePackage[] = [
+  { id: "essencial", name: "Essencial", items: ["Corte", "Limpeza de pele", "Sobrancelha", "Finalização"], discount: 15 },
+  { id: "premium", name: "Premium", items: ["Corte", "Limpeza de pele", "Barba ou hidratação", "Sobrancelha", "Finalização"], discount: 20 },
+  { id: "exclusivo", name: "Exclusivo", items: ["Visagismo simples", "Corte", "Limpeza de pele 2.0", "Hidratação ou barba", "Epilação de nariz e orelha", "Finalização"], discountNote: "Desconto a confirmar" },
+];
+
 export const services: Service[] = [
   { id: "desondulacao-1", name: "Desondulação 1.0", description: "Tratamento para redução e controle do volume.", price: 70, startingAt: true, icon: "≈" },
   { id: "desondulacao-2", name: "Desondulação 2.0", description: "Tratamento intensivo para alinhamento dos fios.", price: 90, startingAt: true, icon: "≈" },
-  { id: "alinhamento-fios", name: "Alinhamento de fios", description: "Alinhamento e disciplina dos fios.", price: 70, startingAt: true, icon: "≋" },
-  { id: "relaxamento-fios", name: "Relaxamento de fios", description: "Relaxamento e controle do volume capilar.", price: 50, startingAt: true, icon: "≈" },
-  { id: "selagem", name: "Selagem", description: "Selagem e acabamento dos fios.", price: 90, startingAt: true, icon: "≋" },
   { id: "hidratacao-profunda", name: "Hidratação profunda", description: "Hidratação intensiva dos fios.", price: 30, startingAt: true, icon: "◇" },
   { id: "design-sobrancelha-1", name: "Design de sobrancelha 1.0", description: "Limpeza e alinhamento da sobrancelha.", price: 15, icon: "⌒" },
   { id: "design-sobrancelha-2", name: "Design de sobrancelha 2.0", description: "Design completo e definição da sobrancelha.", price: 30, icon: "⌒" },
@@ -26,6 +37,6 @@ export const services: Service[] = [
   { id: "epilacao-nariz", name: "Epilação do nariz — cera", description: "Remoção cuidadosa dos pelos com cera.", price: 15, icon: "○" },
   { id: "acabamento-pezinho", name: "Acabamento do pezinho", description: "Contorno e acabamento preciso.", price: 15, icon: "⌁" },
   { id: "barboterapia", name: "Barboterapia", description: "Tratamento, desenho e cuidado completo da barba.", price: 30, icon: "◒" },
-  { id: "barba", name: "Barba", description: "Aparo, desenho e acabamento da barba.", price: 20, icon: "◒" },
-  { id: "cabelo", name: "Cabelo", description: "Corte de cabelo com acabamento.", price: 30, icon: "✦" },
+  { id: "barba", name: "Barba", description: "Aparo, desenho e acabamento da barba.", price: 25, icon: "◒" },
+  { id: "corte", name: "Corte", description: "Corte de cabelo com acabamento.", price: 35, icon: "✦" },
 ];
