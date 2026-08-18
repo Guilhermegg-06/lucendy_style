@@ -11,13 +11,15 @@ export interface ServicePackage {
   id: string;
   name: string;
   items: string[];
-  discount?: number;
+  originalPrice?: number;
+  price?: number;
+  startingAt?: boolean;
   discountNote?: string;
 }
 
 export const servicePackages: ServicePackage[] = [
-  { id: "essencial", name: "Essencial", items: ["Corte", "Limpeza de pele", "Sobrancelha", "Finalização"], discount: 15 },
-  { id: "premium", name: "Premium", items: ["Corte", "Limpeza de pele", "Barba ou hidratação", "Sobrancelha", "Finalização"], discount: 20 },
+  { id: "essencial", name: "Essencial", items: ["Corte", "Limpeza de pele", "Sobrancelha", "Finalização"], originalPrice: 75, price: 60 },
+  { id: "premium", name: "Premium", items: ["Corte", "Limpeza de pele", "Barba ou hidratação", "Sobrancelha", "Finalização"], originalPrice: 100, price: 80, startingAt: true },
   { id: "exclusivo", name: "Exclusivo", items: ["Visagismo simples", "Corte", "Limpeza de pele 2.0", "Hidratação ou barba", "Epilação de nariz e orelha", "Finalização"], discountNote: "Desconto a confirmar" },
 ];
 
