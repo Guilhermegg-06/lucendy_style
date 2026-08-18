@@ -20,7 +20,7 @@ export interface ServicePackage {
 export const servicePackages: ServicePackage[] = [
   { id: "essencial", name: "Essencial", items: ["Corte", "Limpeza de pele", "Sobrancelha", "Finalização"], originalPrice: 75, price: 60 },
   { id: "premium", name: "Premium", items: ["Corte", "Limpeza de pele", "Barba ou hidratação", "Sobrancelha", "Finalização"], originalPrice: 100, price: 80, startingAt: true },
-  { id: "exclusivo", name: "Exclusivo", items: ["Visagismo simples", "Corte", "Limpeza de pele 2.0", "Hidratação ou barba", "Epilação de nariz e orelha", "Finalização"], discountNote: "Desconto a confirmar" },
+  { id: "exclusivo", name: "Exclusivo", items: ["Visagismo simples", "Corte", "Limpeza de pele 2.0", "Hidratação ou barba", "Epilação de nariz e orelha", "Finalização"], originalPrice: 1130, price: 117 },
 ];
 
 export const services: Service[] = [
