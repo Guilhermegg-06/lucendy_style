@@ -13,7 +13,7 @@ const brandLogo = Object.values(logoModules)[0];
 
 function HeroHeader() {
   return (
-    <header className="hero-header" aria-labelledby="hero-slogan">
+    <header className="hero-header" id="inicio" aria-labelledby="hero-slogan">
       <StarField />
       <div className="hero-header__glow" aria-hidden="true" />
 
