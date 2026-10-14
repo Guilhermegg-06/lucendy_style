@@ -3,14 +3,15 @@ import { useEffect, useRef, useState } from "react";
 const MAX_ROTATION = 24;
 const ROTATION_SPEED = 0.24;
 const HOVER_ROTATION = 5;
+const REST_ROTATION = { x: -4, y: 8 };
 
 const clamp = (value: number) =>
   Math.min(MAX_ROTATION, Math.max(-MAX_ROTATION, value));
 
 export default function InteractiveBrandStar() {
-  const [isActive, setIsActive] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const hasShownHintRef = useRef(false);
   const dragRef = useRef({
     pointerId: -1,
     startX: 0,
@@ -19,7 +20,7 @@ export default function InteractiveBrandStar() {
     rotateY: 0,
     dragging: false,
   });
-  const rotationRef = useRef({ x: 0, y: 0 });
+  const rotationRef = useRef(REST_ROTATION);
   const frameRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -36,9 +37,9 @@ export default function InteractiveBrandStar() {
     [],
   );
 
-  const activate = () => {
-    if (isActive) return;
-    setIsActive(true);
+  const revealHint = () => {
+    if (hasShownHintRef.current) return;
+    hasShownHintRef.current = true;
     setShowHint(true);
   };
 
@@ -54,10 +55,7 @@ export default function InteractiveBrandStar() {
   };
 
   const handlePointerDown = (event: React.PointerEvent<HTMLButtonElement>) => {
-    if (!isActive) {
-      activate();
-      return;
-    }
+    revealHint();
 
     dragRef.current = {
       pointerId: event.pointerId,
@@ -73,7 +71,7 @@ export default function InteractiveBrandStar() {
   const handlePointerMove = (event: React.PointerEvent<HTMLButtonElement>) => {
     const drag = dragRef.current;
     if (!drag.dragging) {
-      if (!isActive || event.pointerType !== "mouse") return;
+      if (event.pointerType !== "mouse") return;
 
       const bounds = event.currentTarget.getBoundingClientRect();
       const relativeX = (event.clientX - bounds.left) / bounds.width - 0.5;
@@ -103,17 +101,16 @@ export default function InteractiveBrandStar() {
 
   const handlePointerLeave = (event: React.PointerEvent<HTMLButtonElement>) => {
     if (dragRef.current.dragging || event.pointerType !== "mouse") return;
-    renderRotation(0, 0);
+    renderRotation(REST_ROTATION.x, REST_ROTATION.y);
   };
 
   return (
     <button
       ref={buttonRef}
-      className={`interactive-brand-star${isActive ? " is-active" : ""}`}
+      className="interactive-brand-star is-active"
       type="button"
-      aria-label={isActive ? "Girar a estrela da Lucendy Style" : "Transformar a estrela da Lucendy Style em vidro"}
-      aria-pressed={isActive}
-      onClick={activate}
+      aria-label="Girar a estrela 3D da Lucendy Style"
+      onClick={revealHint}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={finishDrag}

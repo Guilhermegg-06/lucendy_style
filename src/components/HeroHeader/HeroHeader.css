@@ -104,8 +104,8 @@
 }
 
 .interactive-brand-star {
-  --brand-rotate-x: 0deg;
-  --brand-rotate-y: 0deg;
+  --brand-rotate-x: -4deg;
+  --brand-rotate-y: 8deg;
   position: absolute;
   z-index: 2;
   top: 1%;
