@@ -1,4 +1,5 @@
 import { business } from "../../data/business";
+import InteractiveBrandStar from "./InteractiveBrandStar";
 import StarField from "./StarField";
 import "./HeroHeader.css";
 
@@ -17,19 +18,24 @@ function HeroHeader() {
       <div className="hero-header__glow" aria-hidden="true" />
 
       <div className="hero-header__content">
-        {brandLogo ? (
-          <img
-            className="hero-header__logo"
-            src={brandLogo}
-            alt="Lucendy Style"
-          />
-        ) : (
-          <div
-            className="hero-header__logo hero-header__logo--missing"
-            role="img"
-            aria-label="Logo da Lucendy Style ainda não adicionada"
-          />
-        )}
+        <div className="hero-header__brand">
+          {brandLogo ? (
+            <>
+              <img
+                className="hero-header__logo"
+                src={brandLogo}
+                alt="Lucendy Style"
+              />
+              <InteractiveBrandStar />
+            </>
+          ) : (
+            <div
+              className="hero-header__logo hero-header__logo--missing"
+              role="img"
+              aria-label="Logo da Lucendy Style ainda não adicionada"
+            />
+          )}
+        </div>
 
         <p className="hero-header__slogan" id="hero-slogan">
           {business.slogan}
