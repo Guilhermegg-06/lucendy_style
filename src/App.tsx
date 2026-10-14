@@ -8,12 +8,13 @@ import Footer from "./components/Footer/Footer";
 import BottomNavigation from "./components/BottomNavigation/BottomNavigation";
 import { BookingProvider } from "./components/Booking/BookingProvider";
 import ReviewPrompt from "./components/ReviewPrompt/ReviewPrompt";
+import ScrollExpand from "./components/ScrollExpand/ScrollExpand";
 import "./site.css";
 
 function App() {
   return (
     <BookingProvider>
-      <main id="inicio"><HeroHeader /><BusinessIntro /><ServicesSection /><GallerySection /><LocationSection /><FinalCTA /><Footer /></main>
+      <main id="inicio"><HeroHeader /><ScrollExpand mediaSrc="/images/posts/corte-barba.jpg" useWindowScroll startWidth={72} startHeight={62} startRadius={28} endRadius={0} mediaZoom={1.12} scrollDistance={0.8} holdDistance={0.12} smoothing={0.12} overlayScrim={0.25} /><BusinessIntro /><ServicesSection /><GallerySection /><LocationSection /><FinalCTA /><Footer /></main>
       <BottomNavigation />
       <ReviewPrompt />
     </BookingProvider>

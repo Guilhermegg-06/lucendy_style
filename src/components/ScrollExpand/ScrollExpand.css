@@ -1,0 +1,80 @@
+.scroll-expand {
+  --scroll-expand-travel: 92svh;
+  position: relative;
+  height: calc(100svh + var(--scroll-expand-travel));
+  overflow: clip;
+  background: #050505;
+}
+
+.scroll-expand__sticky {
+  position: sticky;
+  top: 0;
+  display: grid;
+  width: 100%;
+  height: 100svh;
+  place-items: center;
+  overflow: hidden;
+}
+
+.scroll-expand__frame {
+  --expand-scale-x: 0.72;
+  --expand-scale-y: 0.62;
+  --expand-radius: 28px;
+  --expand-scrim: 0.25;
+  --expand-edge: 0.12;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, var(--expand-edge));
+  border-radius: var(--expand-radius);
+  background: #111;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+  transform: scale3d(var(--expand-scale-x), var(--expand-scale-y), 1);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.scroll-expand__frame::after {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--expand-scrim));
+  content: "";
+  pointer-events: none;
+}
+
+.scroll-expand__media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  transform: scale3d(var(--expand-media-scale, 1.12), var(--expand-media-scale, 1.12), 1);
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .scroll-expand__media {
+    object-position: center 34%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-expand {
+    height: min(76svh, 46rem);
+  }
+
+  .scroll-expand__sticky {
+    position: relative;
+    height: 100%;
+  }
+
+  .scroll-expand__frame,
+  .scroll-expand__media {
+    transform: none;
+    will-change: auto;
+  }
+
+  .scroll-expand__frame {
+    border-radius: 0;
+  }
+}
