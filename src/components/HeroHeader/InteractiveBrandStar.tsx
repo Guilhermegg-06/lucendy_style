@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-const MAX_ROTATION = 24;
-const ROTATION_SPEED = 0.24;
-const HOVER_ROTATION = 5;
-const REST_ROTATION = { x: -4, y: 8 };
+const MAX_ROTATION = 38;
+const ROTATION_SPEED = 0.32;
+const HOVER_ROTATION = 7;
+const REST_ROTATION = { x: -7, y: 16 };
+const SIDE_DEPTHS = [3, 1, -1, -3, -5, -7, -9, -11, -13, -15, -17, -19, -21, -23, -25];
 
 const clamp = (value: number) =>
   Math.min(MAX_ROTATION, Math.max(-MAX_ROTATION, value));
@@ -119,6 +120,13 @@ export default function InteractiveBrandStar() {
     >
       <span className="interactive-brand-star__object" aria-hidden="true">
         <span className="interactive-brand-star__depth" />
+        {SIDE_DEPTHS.map((depth) => (
+          <span
+            className="interactive-brand-star__side"
+            key={depth}
+            style={{ transform: `translateZ(${depth}px)` }}
+          />
+        ))}
         <span className="interactive-brand-star__glass">
           <span className="interactive-brand-star__reflection" />
         </span>
