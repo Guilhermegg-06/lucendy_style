@@ -13,7 +13,7 @@
 
 .hero-header::after {
   position: absolute;
-  z-index: -1;
+  z-index: 3;
   inset: 0;
   border: 1px solid rgba(255, 255, 255, 0.05);
   content: "";
@@ -22,7 +22,7 @@
 
 .hero-header__glow {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   top: 43%;
   left: 50%;
   width: min(150vw, 46rem);
@@ -38,7 +38,29 @@
   pointer-events: none;
 }
 
+.hero-stars {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-stars__point {
+  position: absolute;
+  top: var(--star-y);
+  left: var(--star-x);
+  width: var(--star-size);
+  height: var(--star-size);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, var(--star-opacity));
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.12);
+  animation: hero-star-twinkle var(--star-duration) var(--star-delay) ease-in-out infinite;
+}
+
 .hero-header__content {
+  position: relative;
+  z-index: 2;
   display: flex;
   width: min(100%, 42rem);
   min-height: 100%;
@@ -47,6 +69,18 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+@keyframes hero-star-twinkle {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(0.88);
+  }
+  48% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
 
 .hero-header__logo {
@@ -139,6 +173,10 @@
   .hero-header__slogan,
   .hero-header__explore,
   .hero-header__arrow {
+    animation: none;
+  }
+
+  .hero-stars__point {
     animation: none;
   }
 }

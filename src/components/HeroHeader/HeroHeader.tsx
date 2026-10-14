@@ -1,4 +1,5 @@
 import { business } from "../../data/business";
+import StarField from "./StarField";
 import "./HeroHeader.css";
 
 const logoModules = import.meta.glob<string>("../../assets/lucendy-logo.png", {
@@ -12,6 +13,7 @@ const brandLogo = Object.values(logoModules)[0];
 function HeroHeader() {
   return (
     <header className="hero-header" aria-labelledby="hero-slogan">
+      <StarField />
       <div className="hero-header__glow" aria-hidden="true" />
 
       <div className="hero-header__content">
